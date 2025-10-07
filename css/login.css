@@ -2,39 +2,48 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     background-color: #f0f2f5;
+    color: #333;
 }
 
 .container {
     max-width: 1200px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    background-color: #d8d8d8;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-#main-header {
-    background-color: #ffffff;
-    padding: 15px 25px;
-    border-bottom: 1px solid #ddd;
+#page-header {
+    background-color: #d8d8d8;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.main-nav a:hover {
-    color: #007bff;
-    text-decoration: underline;
 }
 
 .profile-icon > span {
     font-size: 1.5rem;
 }
 
+.profile-icon--header img {
+    width: 54px;
+    height: 54px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 10px;
+}
+
 .main-nav a {
     text-decoration: none;
-    color: #007bff;
+    color: black;
     font-weight: bold;
-    margin: 0 5px;
+}
+
+.main-nav a:hover {
+    color: purple;
 }
 
 .login-container {
@@ -70,6 +79,11 @@ body {
     border: 0;
     margin-top: 10px;
     margin-bottom: 5px;
+    padding: 5%;
+    cursor: pointer;
+}
+#button:hover {
+    background-color: purple;
 }
 
 .login-container a {
@@ -94,4 +108,8 @@ p::first-line {
 
 form ~ a {
     margin: 5px;
+}
+
+.container ~ .login-container {
+    margin: 30px;
 }
