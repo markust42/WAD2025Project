@@ -1,0 +1,108 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#main-header {
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+article p {
+    color: #333;
+    line-height: 1.5;
+}
+
+.profile-icon > span {
+    font-size: 1.5rem;
+}
+
+.sidebar-left + .feed {
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 20px;
+}
+
+.post ~ .post {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.post-content p::first-letter {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #111;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+    }
+
+    .sidebar-left, .sidebar-right {
+        flex: 1; 
+    }
+
+    .feed {
+        flex: 2.5; 
+        order: 0; 
+    }
+}
+
+.page-footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+    border-top: 1px solid #ddd;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px; 
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #65676b;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 8px;
+}
