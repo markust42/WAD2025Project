@@ -1,66 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAD 2025 Project</title>
     <link rel="stylesheet" href="css/styles.css">
-    </head>
-<body>
+</head>
 
+<body>
     <div class="container">
 
-        <header class="page-header" id="main-header">
+        <header class="page-header" id="page-header">
             <nav class="main-nav">
-                <a href="#">Home</a> | <a href="#">addPost</a>
+                <a href="index.html">Home</a>
+                <a href="addPost.html">addPost</a>
             </nav>
-            <div class="profile-icon">
-                <span>👤</span>
+
+            <div class="profile-icon profile-icon--header">
+                <img src="images/default_profile.jpg" alt="Profile icon">
             </div>
         </header>
 
         <main class="main-content">
 
-            <aside class="sidebar-left">
-                <h2>Sidebar</h2>
+            <div class="sidebar-left">
+                <h2>Sidebar Left</h2>
                 <p>This is a sidebar-left</p>
-            </aside>
+            </div>
 
             <section class="feed">
+                <h2>Recent Posts</h2>
 
                 <article class="post">
-                    <div class="post-header">
-                        <div class="user-info">
-                            <span>👤</span> </div>
-                        <time datetime="2022-10-22">Oct 22, 2022</time>
-                    </div>
+                    <header class="post-header">
+                        <div class="profile-icon profile-icon--post">
+                            <img src="images/default_profile.jpg" alt="Profile icon">
+                        </div>
+                        <time datetime="2022-10-22">Oct 22, 2025</time>
+                    </header>
                     <div class="post-content">
-                        <img src="images/tartu2024.jpg" title = "A building in Tartu with a Tartu 2024 banner">
-                        <p>Tartu 2022</p>
+                        <img src="images/tartu2024.jpg" title="A building in Tartu with a Tartu 2024 banner">
+                        <h3>Tartu 2025</h3>
                     </div>
                     <div class="post-actions">
-                        <span>👍</span> </div>
+                        <span title="Like post">👍</span>
+                    </div>
                 </article>
 
                 <article class="post">
-                    <div class="post-header">
-                        <div class="user-info">
-                           <span>👤</span> </div>
-                        <time datetime="2022-10-02">Oct 2, 2022</time>
-                    </div>
+                    <header class="post-header">
+                        <div class="profile-icon profile-icon--post">
+                            <img src="images/default_profile.jpg" alt="Profile icon">
+                        </div>
+                        <time datetime="2022-10-02">Oct 1, 2025</time>
+                    </header>
                     <div class="post-content">
-                        <p>Anyone knows in which room is the lab today?</p>
+                        <h3>umm what the sigma?</h3>
                     </div>
                     <div class="post-actions">
-                        <span>👍</span> </div>
+                        <span title="Like post">👍</span>
+                    </div>
                 </article>
 
+                <article class="post">
+                    <header class="post-header">
+                        <div class="profile-icon profile-icon--post">
+                            <img src="images/default_profile.jpg" alt="Profile icon">
+                        </div>
+                        <time datetime="2022-10-02">Sep 28, 2025</time>
+                    </header>
+                    <div class="post-content">
+                        <h3>gurt yo?</h3>
+                    </div>
+                    <div class="post-actions">
+                        <span title="Like post">👍</span>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <header class="post-header">
+                        <div class="profile-icon profile-icon--post">
+                            <img src="images/default_profile.jpg" alt="Profile icon">
+                        </div>
+                        <time datetime="2022-10-02">Sep 21, 2025</time>
+                    </header>
+                    <div class="post-content">
+                        <h3>why we still here?</h3>
+                    </div>
+                    <div class="post-actions">
+                        <span title="Like post">👍</span>
+                    </div>
+                </article>
+
+                <article class="post">
+                    <header class="post-header">
+                        <div class="profile-icon profile-icon--post">
+                            <img src="images/default_profile.jpg" alt="Profile icon">
+                        </div>
+                        <time datetime="2022-10-02">Sep 16, 2025</time>
+                    </header>
+                    <div class="post-content">
+                        <h3>help?</h3>
+                    </div>
+                    <div class="post-actions">
+                        <span title="Like post">👍</span>
+                    </div>
+                </article>
             </section>
 
-            <aside class="sidebar-right">
-                <h2>Sidebar</h2>
+            <div class="sidebar-right">
+                <h2>Sidebar Right</h2>
                 <p>This is a sidebar-right</p>
-                </aside>
+            </div>
+
 
         </main>
 
@@ -69,6 +122,6 @@
         </footer>
 
     </div>
-
 </body>
+
 </html>
