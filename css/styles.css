@@ -51,7 +51,8 @@ select {
 }
 
 .main-nav a:hover {
-    color: purple;
+    background-color: blue;
+    color: white;
 }
 
 .profile-icon img {

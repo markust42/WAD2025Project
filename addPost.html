@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Post - WAD 2025 Project</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <header class="page-header" id="page-header">
-            <nav class="main-nav">
-                <a href="index.html">Home</a>
-            </nav>
-            <div class="profile-icon profile-icon--header">
-                <img src="images/default_profile.jpg" alt="Profile icon">
-            </div>
-        </header>
+      <header class="page-header" id="page-header">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+        </nav>
+        <div class="profile-icon profile-icon--header">
+          <img src="images/default_profile.jpg" alt="Profile icon" />
+        </div>
+      </header>
 
-    <div class="add-post-container">
+      <div class="add-post-container">
         <form class="add-post-form" method="get" action="index.html">
-            <div>
-                <label for="post-textarea">Post body</label>
-                <textarea id="post-textarea" name="textarea" placeholder="Type your post here..."></textarea>
-            </div>
-            <div>
-                <p>Select file</p>
-                <label class="custom-file-upload" for="file-upload">Choose file</label>
-                <input type="file" id="file-upload" accept="image/png, image/jpeg"/>
-            </div>
-            <button class="submit-button">Create post</button>
+          <div>
+            <label for="post-textarea">Post body</label>
+            <textarea
+              id="post-textarea"
+              name="textarea"
+              placeholder="Type your post here..."
+            ></textarea>
+          </div>
+          <div>
+            <p>Select file</p>
+            <label class="custom-file-upload" for="file-upload"
+              >Choose file</label
+            >
+            <input
+              type="file"
+              id="file-upload"
+              accept="image/png, image/jpeg"
+            />
+          </div>
+          <button class="submit-button">Create post</button>
         </form>
+      </div>
     </div>
-    </div>
-</body>
+  </body>
 </html>
