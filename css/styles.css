@@ -112,6 +112,29 @@ select {
     color: #65676b;
 }
 
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.author-info {
+  line-height: 1.2;
+  color: #333;
+}
+
+.author-info small {
+  color: #777;
+  font-size: 0.8em;
+}
+
 .post-content img {
     max-width: 100%;
     border-radius: 8px;
@@ -280,4 +303,58 @@ input[type="file"] {
         flex-direction: column;
         gap: 0.5rem;
     }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background-color: #fff;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 10px;
+  z-index: 10;
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.dropdown-content a:hover {
+  color: #007bff;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(4px);
+  pointer-events: auto;
+}
+
+.dropbtn {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opcacity 0.15s ease;
+}
+
+.dropbtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 3px rgba(0, 123, 255, 0.25);
+  opacity: 0.9;
 }

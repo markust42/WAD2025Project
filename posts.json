@@ -1,0 +1,60 @@
+[
+  {
+    "id": "p001",
+    "title": "Tartu 2025",
+    "body": "The Tartu 2024 sign being set up in the Town Hall Square.",
+    "author": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "avatar": "images/default_profile.jpg"
+    },
+    "createdAt": "2025-10-22T12:00:00Z",
+    "image": "images/tartu2024.jpg",
+    "tags": ["Tartu", "Estonia", "Culture"]
+  },
+  {
+    "id": "p002",
+    "title": "umm what the sigma?",
+    "body": "Just saw the weirdest thing on my way home.",
+    "author": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "avatar": "images/default_profile.jpg"
+    },
+    "createdAt": "2025-10-01T14:35:00Z",
+    "tags": ["daily", "fun"]
+  },
+  {
+    "id": "p003",
+    "title": "gurt yo?",
+    "body": "Anyone else a fan of traditional Estonian yogurt?",
+    "author": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "avatar": "images/default_profile.jpg"
+    },
+    "createdAt": "2025-09-28T09:10:00Z"
+  },
+  {
+    "id": "p004",
+    "title": "why we still here?",
+    "body": "Just to suffer?",
+    "author": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "avatar": "images/default_profile.jpg"
+    },
+    "createdAt": "2025-09-21T00:10:00Z"
+  },
+  {
+    "id": "p005",
+    "title": "help?",
+    "body": "Stuck on this coding problem, need some fresh eyes.",
+    "author": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "avatar": "images/default_profile.jpg"
+    },
+    "createdAt": "2025-09-16T21:00:00Z"
+  }
+]

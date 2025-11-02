@@ -13,10 +13,12 @@
           <a href="index.html">Home</a>
           <a href="addPost.html">Add Post</a>
         </nav>
-        <div class="profile-icon profile-icon--header">
-          <a href="login.html">
-            <img src="images/default_profile.jpg" alt="Profile icon" />
-          </a>
+        <div class="profile-icon profile-icon--header dropdown" id="profileDropdown">
+          <img src="images/default_profile.jpg" alt="Profile icon" class="dropbtn" />
+          <div class="dropdown-content">
+            <p><strong>john_doe83</strong><br /><small>john.doe@example.com</small></p>
+            <a href="#" id="logoutBtn">Logout</a>
+          </div>
         </div>
       </header>
 
@@ -28,71 +30,6 @@
 
         <section class="feed">
           <h2>Recent Posts</h2>
-
-          <article class="post">
-            <header class="post-header">
-              <div class="profile-icon profile-icon--post">
-                <img src="images/default_profile.jpg" alt="Profile icon" />
-              </div>
-              <time datetime="2025-10-22">Oct 22, 2025</time>
-            </header>
-            <div class="post-content">
-              <img
-                src="images/tartu2024.jpg"
-                title="A building in Tartu with a Tartu 2024 banner"
-              />
-              <h3>Tartu 2025</h3>
-            </div>
-            <div class="post-actions">
-              <span title="Like post">👍</span>
-            </div>
-          </article>
-
-          <article class="post">
-            <header class="post-header">
-              <div class="profile-icon profile-icon--post">
-                <img src="images/default_profile.jpg" alt="Profile icon" />
-              </div>
-              <time datetime="2025-10-01">Oct 1, 2025</time>
-            </header>
-            <div class="post-content">
-              <h3>umm what the sigma?</h3>
-            </div>
-            <div class="post-actions">
-              <span title="Like post">👍</span>
-            </div>
-          </article>
-
-          <article class="post">
-            <header class="post-header">
-              <div class="profile-icon profile-icon--post">
-                <img src="images/default_profile.jpg" alt="Profile icon" />
-              </div>
-              <time datetime="2022-10-02">Sep 28, 2025</time>
-            </header>
-            <div class="post-content"><h3>gurt yo?</h3></div>
-            <div class="post-actions"><span title="Like post">👍</span></div>
-          </article>
-          <article class="post">
-            <header class="post-header">
-              <div class="profile-icon profile-icon--post">
-                <img src="images/default_profile.jpg" alt="Profile icon" />
-              </div>
-              <time datetime="2022-10-02">Sep 21, 2025</time>
-            </header>
-            <div class="post-content"><h3>why we still here?</h3></div>
-            <div class="post-actions"><span title="Like post">👍</span></div>
-          </article>
-          <article class="post">
-            <header class="post-header">
-              <div class="profile-icon profile-icon--post">
-                <img src="images/default_profile.jpg" alt="Profile icon" />
-              </div>
-              <time datetime="2022-10-02">Sep 16, 2025</time>
-            </header>
-            <div class="post-content"><h3>help?</h3></div>
-            <div class="post-actions"><span title="Like post">👍</span></div>
-          </article>
         </section>
 
         <div class="sidebar-right">
@@ -105,5 +42,6 @@
         <p>Footer</p>
       </footer>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
