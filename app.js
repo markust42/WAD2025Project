@@ -1,10 +1,19 @@
 async function loadPosts() {
+  const url = "https://api.jsonsilo.com/public/df16c32d-5078-4b92-b1c2-4a4c4be54e65";
+  const jsonFile = "posts.json"
   try {
-    const res = await fetch("posts.json");
-    const posts = await res.json();
+    // [+] The line below can be used to fetch from the jsonsilo blob storage
+    // const response = await fetch(url);
+
+    const response = await fetch(jsonFile);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`)
+    }
+    
+    const posts = await response.json();
     renderPosts(posts);
   } catch (err) {
-    console.error("Error loading posts:", err);
+    console.error(err.message);
   }
 }
 
