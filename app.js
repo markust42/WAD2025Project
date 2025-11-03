@@ -34,10 +34,6 @@ function renderPosts(posts) {
         <h3>${post.title}</h3>
         <p>${post.body || ""}</p>
       </div>
-
-      <div class="post-actions">
-        <span title="Like post">👍</span>
-      </div>
     `;
     feed.appendChild(article);
   });
@@ -68,8 +64,7 @@ function setupLogout() {
   logoutLink.addEventListener("click", (e) => {
     e.preventDefault();
     const dropdown = document.getElementById("profileDropdown");
-    dropdown.classList.remove("show"); 
-    alert("You have been logged out."); 
+    dropdown.classList.remove("show");
     window.location.href = "login.html"; 
   });
 }
