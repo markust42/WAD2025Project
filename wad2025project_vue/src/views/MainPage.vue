@@ -3,11 +3,6 @@
     <HeaderComponent />
 
     <main class="main-content">
-      <div class="sidebar-left">
-        <h2>Sidebar Left</h2>
-        <p>This is a sidebar-left</p>
-      </div>
-
       <section class="feed">
         <h2>Recent Posts</h2>
 
@@ -21,13 +16,7 @@
           :id="post.id"
         />
       </section>
-
-      <div class="sidebar-right">
-        <h2>Sidebar Right</h2>
-        <p>This is a sidebar-right</p>
-      </div>
     </main>
-
     <FooterComponent />
   </div>
 </template>
