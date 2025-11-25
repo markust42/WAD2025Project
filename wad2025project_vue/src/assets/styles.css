@@ -15,7 +15,6 @@ button, textarea, input, select {
 }
 
 .container {
-  max-width: 1350px;
   margin: 0 auto;
   background: #faf8ff;
   border-radius: 12px;
@@ -26,7 +25,7 @@ button, textarea, input, select {
 }
 
 #page-header {
-  background-color: #6a44c2;
+  background-color: #21e499;
   color: white;
   padding: 15px 30px;
   display: flex;
@@ -113,7 +112,7 @@ button, textarea, input, select {
 }
 
 .feed > .post {
-  border-left: 4px solid #b388ff;
+  border-left: 4px solid #21e499;
   padding-left: 18px;
 }
 
@@ -183,12 +182,12 @@ button, textarea, input, select {
 }
 
 .post-actions span:hover {
-  color: #6a44c2;
+  color: #18a670;
   transform: scale(1.1);
 }
 
 .page-footer {
-  background-color: #6a44c2;
+  background-color: #21e499;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -233,7 +232,7 @@ button, textarea, input, select {
 
 .dropdown-content a {
   display: block;
-  color: #6a44c2;
+  color: #21e499;
   font-weight: 500;
   text-align: left;
   padding: 8px 10px;
@@ -244,7 +243,7 @@ button, textarea, input, select {
 
 .dropdown-content a:hover {
   background-color: #f3eefc;
-  color: #5633a7;
+  color: #188b5f;
 }
 
 .dropdown.show .dropdown-content {
@@ -261,7 +260,7 @@ button, textarea, input, select {
 
 .dropbtn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 5px rgba(106, 68, 194, 0.25);
+  box-shadow: 0 0 5px rgba(26, 132, 100, 0.25);
   opacity: 0.95;
 }
 
@@ -290,7 +289,7 @@ button, textarea, input, select {
 
 .login-container h2 {
   margin-bottom: 15px;
-  color: #4b2d91;
+  color: #21e499;
 }
 
 .login-container form,
@@ -320,7 +319,7 @@ button, textarea, input, select {
 
 #button,
 .submit-button {
-  background-color: #6a44c2;
+  background-color: #21e499;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -332,11 +331,11 @@ button, textarea, input, select {
 
 #button:hover,
 .submit-button:hover {
-  background-color: #5633a7;
+  background-color: #197a55;
 }
 
 .custom-file-upload {
-  background-color: #6a44c2;
+  background-color: #21e499;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -347,7 +346,7 @@ button, textarea, input, select {
 }
 
 .custom-file-upload:hover {
-  background-color: #5633a7;
+  background-color: #1d815b;
 }
 
 input[type="file"] {
@@ -356,7 +355,7 @@ input[type="file"] {
 
 .login-container a,
 .add-post-container a {
-  color: #6a44c2;
+  color: #21e499;
   text-decoration: none;
   font-size: 14px;
   margin-top: 5px;
