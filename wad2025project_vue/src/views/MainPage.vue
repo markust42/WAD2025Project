@@ -1,40 +1,59 @@
 <template>
-  <div class="container">
-    <HeaderComponent />
+  <main class="main-content">
+    <section class="feed">
 
-    <main class="main-content">
-      <section class="feed">
+      <div class="feed-header">
         <h2>Recent Posts</h2>
+        <button id="button" @click="logout">Logout</button>
+      </div>
 
-        <button @click="resetLikes" id="button">
-          Reset All Likes
-        </button>
+      <PostComponent
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+        @click="goToPost(post.id)"
+      />
 
-        <PostComponent
-          v-for="post in posts"
-          :key="post.id"
-          :id="post.id"
-        />
-      </section>
-    </main>
-    <FooterComponent />
-  </div>
+      <div class="feed-actions">
+        <button id="button" @click="goToAddPost">Add post</button>
+        <button id="button" @click="deleteAll">Delete all</button>
+      </div>
+
+    </section>
+  </main>
 </template>
 
 <script>
-import { mapState } from "vuex";
-import HeaderComponent from "../components/Header.vue";
-import FooterComponent from "../components/Footer.vue";
 import PostComponent from "../components/Post.vue";
 
 export default {
   name: "MainPage",
-  components: { HeaderComponent, FooterComponent, PostComponent },
-  computed: mapState(["posts"]),
+  components: { PostComponent },
+
+  data() {
+    return {
+      posts: []
+    };
+  },
+
+  async mounted() {
+    const res = await fetch("http://localhost:3000/api/posts");
+    this.posts = await res.json();
+  },
 
   methods: {
-    resetLikes() {
-      this.$store.commit("resetLikes");
+    goToPost(id) {
+      this.$router.push(`/posts/${id}`);
+    },
+    logout() {
+      localStorage.removeItem("token");
+      this.$router.push("/login");
+    },
+    goToAddPost() {
+      this.$router.push("/addpost");
+    },
+    deleteAll() {
+      alert("Delete all clicked");
     }
   }
 };

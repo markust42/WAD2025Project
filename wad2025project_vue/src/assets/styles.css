@@ -15,10 +15,8 @@ button, textarea, input, select {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 0;
   background: #faf8ff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -82,32 +80,15 @@ button, textarea, input, select {
 
 .main-content {
   display: flex;
-  flex-direction: row;
-  padding: 20px;
-  gap: 20px;
+  flex-direction: column;
+  padding: 0;
   flex: 1;
-}
-
-.sidebar-left,
-.sidebar-right {
-  flex: 1;
-  background-color: #ffffff;
-  border: 1px solid #e1d4fa;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar-left h2~p,
-.sidebar-right h2~p {
-  font-style: italic;
-  color: #666;
 }
 
 .feed {
-  flex: 2.5;
-  border-left: none;
-  border-right: none;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -270,7 +251,8 @@ button, textarea, input, select {
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 40px 0;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .login-container > div,
@@ -297,20 +279,38 @@ button, textarea, input, select {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  width: 100%;
 }
 
 .login-container input,
 .add-post-form textarea {
-  width: 200px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 6px 8px;
+  padding: 8px 10px;
   font-size: 14px;
   resize: none;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 0;
+}
 
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.action-buttons #button {
+  margin-top: 0;
+  width: auto;
+  min-width: 80px;
+}
+
+.action-buttons span {
+  color: #222;
 }
 
 .add-post-form textarea {
@@ -371,15 +371,10 @@ input[type="file"] {
     flex-direction: column;
   }
 
-  .sidebar-left,
-  .sidebar-right {
-    flex: none;
-  }
-
   .feed {
     border-left: none;
     border-right: none;
-    padding: 0;
+    padding: 0 20px;
   }
 
   .login-container > div,
@@ -391,4 +386,43 @@ input[type="file"] {
   .add-post-form textarea {
     width: 100%;
   }
+}
+
+.error-box {
+  width: 100%;
+  background: #ffe6e6;
+  border: 1px solid #cc0000;
+  padding: 10px;
+  margin-top: 0;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.error-title {
+  font-weight: bold;
+  color: #cc0000;
+}
+
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.feed-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.feed-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
