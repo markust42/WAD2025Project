@@ -47,12 +47,28 @@ export default {
   },
 
   methods: {
-    submit() {
-      // backend integration here later
-      console.log("Login attempt:", this.email, this.password);
+    async submit() {
+      try {
+        const res = await fetch("http://localhost:3000/api/auth/login", {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: this.email,
+            password: this.password
+          })
+        });
 
-      // temp
-      this.error = "Login not connected yet";
+        const data = await res.json();
+        if (res.ok) {
+          this.$router.push("/");
+        } else {
+          alert("Login failed: " + (data.error || "Unknown error"));
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Network error: " + err.message);
+      }
     },
     goToSignup() {
       this.$router.push("/signup");

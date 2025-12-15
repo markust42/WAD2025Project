@@ -37,7 +37,10 @@ export default {
   },
 
   async mounted() {
-    const res = await fetch("http://localhost:3000/api/posts");
+    const res = await fetch("http://localhost:3000/api/posts", {
+      method: "GET",
+      credentials: "include"
+    });
     this.posts = await res.json();
   },
 
@@ -45,9 +48,19 @@ export default {
     goToPost(id) {
       this.$router.push(`/posts/${id}`);
     },
-    logout() {
-      localStorage.removeItem("token");
-      this.$router.push("/login");
+    async logout() {
+      try {
+        // tell the auth api to logout and clear the cookie
+        await fetch("http://localhost:3000/api/auth/logout", {
+          method: "POST",
+          credentials: "include"
+        });
+
+        // redirect the user
+        this.$router.push("/login");
+      } catch (err) {
+        console.error("Logout failed:", err);
+      }
     },
     goToAddPost() {
       this.$router.push("/addpost");

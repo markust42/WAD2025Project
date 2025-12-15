@@ -21,7 +21,30 @@ const routes = [
   }
 ];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes
 });
+
+router.beforeEach(async (to, from, next) => {
+  const protectedRoutes = ["/", "/addpost"];
+  
+  if (protectedRoutes.includes(to.path)) {
+    try {
+      const res = await fetch("http://localhost:3000/api/auth/check", {
+        credentials: "include"
+      });
+      if (res.status === 401) {
+        next("/login");
+      } else {
+        next();
+      }
+    } catch (err) {
+      next("/login");
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

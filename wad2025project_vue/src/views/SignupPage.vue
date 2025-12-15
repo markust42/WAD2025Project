@@ -66,9 +66,30 @@ export default {
       return this.errors.length === 0;
     },
 
-    submit() {
-      if (this.validatePassword()) {
-        alert("Signup successful!");
+    async submit() {
+      if (!this.validatePassword()) return;
+      try {
+        const res = await fetch("http://localhost:3000/api/auth/signup", {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: this.email,
+            password: this.password
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Signup successful!");
+          this.$router.push("/login");
+        } else {
+          alert("Signup failed: " + (data.error || "Unknown error"));
+        }
+      } catch (err) {
+        console.error("Network error:", err);
+        alert("Network error: " + err.message);
       }
     },
     goToLogin() {
