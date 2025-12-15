@@ -7,6 +7,17 @@ const bcrypt = require("bcrypt");
 
 const authenticate = require("../middleware/auth");
 
+// create table into db if not yet there
+(async () => {
+  await pool.query(`
+    CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+  `);
+})();
 
 router.post("/signup", async (req, res) => {
   const { email, password } = req.body;
