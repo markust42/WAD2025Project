@@ -3,6 +3,7 @@
     <form class="add-post-form" @submit.prevent="submitPost">
       <h2>Add Post</h2>
 
+      <label>Body</label>
       <textarea
         v-model="body"
         placeholder="body"

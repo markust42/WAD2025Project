@@ -20,67 +20,77 @@ const authenticate = require("../middleware/auth");
 })();
 
 router.post("/signup", async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  // check if user exists
-  const userExists = await pool.query("SELECT * FROM users WHERE email=$1", [email]);
-  if (userExists.rows.length > 0) return res.status(400).json({ error: "Email already in use" });
+    // check if user exists
+    const userExists = await pool.query("SELECT * FROM users WHERE email=$1", [email]);
+    if (userExists.rows.length > 0) return res.status(400).json({ error: "Email already in use" });
 
-  // hash the password
-  const hashed = await bcrypt.hash(password, 10);
+    // hash the password
+    const hashed = await bcrypt.hash(password, 10);
 
-  // save user
-  const result = await pool.query(
-    "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
-    [email, hashed]
-  );
+    // save user
+    const result = await pool.query(
+      "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
+      [email, hashed]
+    );
 
-  const user = result.rows[0];
+    const user = result.rows[0];
 
-  // generate JWT
-  const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    // generate JWT
+    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-  // send httponly JWT in cookie
-  res.cookie("jwt", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-    maxAge: 60 * 60 * 1000
-  });
+    // send httponly JWT in cookie
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      maxAge: 60 * 60 * 1000
+    });
 
-  res.json({ success: true });
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Signup error:", err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  const result = await pool.query(
-    "SELECT * FROM users WHERE email=$1",
-    [email]
-  );
+    const result = await pool.query(
+      "SELECT * FROM users WHERE email=$1",
+      [email]
+    );
 
-  const user = result.rows[0];
-  if (!user) return res.status(401).json({ error: "Invalid credentials" });
+    const user = result.rows[0];
+    if (!user) return res.status(401).json({ error: "Invalid credentials" });
 
-  // password check
-  const valid = await bcrypt.compare(password, user.password);
-  if (!valid) return res.status(401).json({ error: "Invalid credentials" });
+    // password check
+    const valid = await bcrypt.compare(password, user.password);
+    if (!valid) return res.status(401).json({ error: "Invalid credentials" });
 
-  const token = jwt.sign(
-    { userId: user.id },
-    process.env.JWT_SECRET,
-    { expiresIn: "1h" }
-  );
+    const token = jwt.sign(
+      { userId: user.id },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
-  res.cookie("jwt", token, {
-    httpOnly: true,
-    sameSite: "none",
-    secure: true,
-    maxAge: 60 * 60 * 1000
-  });
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+      maxAge: 60 * 60 * 1000
+    });
 
-  res.json({ success: true });
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Login error:", err);
+    res.status(500).json({ error: err.message });
+  }
 });
 
 router.post("/logout", (req, res) => {
