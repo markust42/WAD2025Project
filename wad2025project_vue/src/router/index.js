@@ -6,6 +6,7 @@ import LoginPage from "../views/LoginPage.vue";
 import SignupPage from "../views/SignupPage.vue";
 import ContactPage from "../views/ContactPage.vue";
 import AddPostPage from "../views/AddPostPage.vue";
+import EditPostPage from "../views/EditPost.vue";
 
 const routes = [
   {
@@ -16,7 +17,8 @@ const routes = [
       { path: "login", component: LoginPage },
       { path: "signup", component: SignupPage },
       { path: "contacts", component: ContactPage },
-      { path: "addpost", component: AddPostPage }
+      { path: "addpost", component: AddPostPage },
+      { path: "edit/:id", component: EditPostPage}
     ]
   }
 ];
@@ -27,7 +29,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  const protectedRoutes = ["/", "/addpost"];
+  const protectedRoutes = ["/", "/addpost", "/edit"];
   
   if (protectedRoutes.includes(to.path)) {
     try {

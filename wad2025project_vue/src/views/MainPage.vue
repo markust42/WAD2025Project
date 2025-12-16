@@ -46,7 +46,7 @@ export default {
 
   methods: {
     goToPost(id) {
-      this.$router.push(`/posts/${id}`);
+      this.$router.push(`/edit/${id}`);
     },
     async logout() {
       try {
@@ -65,8 +65,14 @@ export default {
     goToAddPost() {
       this.$router.push("/addpost");
     },
-    deleteAll() {
-      alert("Delete all clicked");
+    async deleteAll() {
+      await fetch("http://localhost:3000/api/posts", {
+        method: "DELETE",
+        credentials: "include"
+      });
+      // refresh list:
+      const res = await fetch("http://localhost:3000/api/posts", { credentials: "include" });
+      this.posts = await res.json();
     }
   }
 };

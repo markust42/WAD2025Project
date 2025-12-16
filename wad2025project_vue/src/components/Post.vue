@@ -1,7 +1,7 @@
 <template>
   <article class="post" v-if="post">
     <header class="post-header">
-      <strong>{{ post.title }}</strong>
+      <strong class="post-date">{{ formattedDate }}</strong>
     </header>
 
     <div class="post-content">
@@ -24,6 +24,18 @@ export default {
     post: {
       type: Object,
       required: true
+    }
+  },
+
+  computed: {
+    formattedDate() {
+      const date = new Date(this.post.modified_at);
+
+      return date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
     }
   }
 };
